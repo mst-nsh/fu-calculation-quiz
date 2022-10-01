@@ -1,0 +1,23 @@
+root: true
+
+env:
+  browser: true
+  node: true
+
+extends:
+  - "eslint:recommended"
+  - "@nuxtjs/eslint-config-typescript"
+  - "plugin:prettier/recommended"
+  - "plugin:nuxt/recommended"
+  - "prettier"
+
+plugins:
+  - "prettier"
+
+rules:
+  no-extra-semi: error
+  quotes:
+    - "warn"
+    - "single"
+    - avoidEscape: true
+  camelcase: off
