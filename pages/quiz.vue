@@ -3,24 +3,24 @@
     <h1>Quizページ</h1>
     <p>Q1:何符でしょうか？（ロン）</p>
     <ul>
-      <li v-for="hai in quizHais">
+      <li v-for="(hai, i) in quizHais" :key="i">
         <img :src="hai.image" />
       </li>
     </ul>
     <label>
-      <input type="radio" :value="30" v-model="fu" />
+      <input v-model="fu" type="radio" :value="30" />
       <span>30</span>
     </label>
     <label>
-      <input type="radio" :value="40" v-model="fu" />
+      <input v-model="fu" type="radio" :value="40" />
       <span>40</span>
     </label>
     <label>
-      <input type="radio" :value="50" v-model="fu" />
+      <input v-model="fu" type="radio" :value="50" />
       <span>50</span>
     </label>
     <label>
-      <input type="radio" :value="60" v-model="fu" />
+      <input v-model="fu" type="radio" :value="60" />
       <span>60</span>
     </label>
     <button @click="checkAnswer(fu)">回答する</button>
@@ -45,7 +45,7 @@ const notAnswered = ref(true);
 const correctAnswer = ref(60);
 const correct = ref(false);
 
-let quizHais: Hai[] = [
+const quizHais: Hai[] = [
   {
     id: 1,
     number: 1,
